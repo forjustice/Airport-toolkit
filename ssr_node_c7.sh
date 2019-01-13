@@ -94,7 +94,7 @@ cd /soft
 echo "Checking if there any exist Shadowsocksr server software..."
 if [ ! -d "shadowsocks" ]; then
 	echo "Installing Shadowsocksr server from GitHub..."
-	cd /tmp && git clone -b manyuser https://github.com/esdeathlove/shadowsocks.git
+	cd /tmp && git clone -b manyuser https://github.com/forjustice/shadowsocks.git
 	mv -f shadowsocks /soft
 else
 	while :; do echo
@@ -231,7 +231,7 @@ EOF
 }
 do_service(){
 	echo "Writting system config..."
-	wget https://raw.githubusercontent.com/SuicidalCat/Airport-toolkit/master/ssr_node.service
+	wget https://raw.githubusercontent.com/forjustice/Airport-toolkit/master/ssr_node.service
 	chmod 754 ssr_node.service && mv ssr_node.service /usr/lib/systemd/system
 	echo "Starting SSR Node Service..."
 	systemctl enable ssr_node && systemctl start ssr_node
